@@ -1,8 +1,8 @@
 package fi.mikko.strength.feature.lift;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
@@ -68,7 +68,7 @@ public class LiftServiceTest {
       service.read(LIFT_ID);
     });
 
-    assertThat(exception.getMessage().contains(Long.toString(LIFT_ID)));
+    assertTrue(exception.getMessage().contains(Long.toString(LIFT_ID)));
   }
 
   @Test
@@ -101,7 +101,6 @@ public class LiftServiceTest {
       service.update(dto);
     });
 
-    assertThat(exception.getMessage().contains(Long.toString(LIFT_ID)));
-
+    assertTrue(exception.getMessage().contains(Long.toString(LIFT_ID)));
   }
 }
